@@ -137,7 +137,7 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(45) NOT NULL,
   `name` varchar(500) DEFAULT NULL,
   `address` varchar(1000) DEFAULT NULL,
@@ -145,10 +145,11 @@ CREATE TABLE `user` (
   `email` varchar(200) DEFAULT NULL,
   `phone_number` varchar(15) DEFAULT NULL,
   `password` varchar(200) DEFAULT NULL,
+  `auth_token` varchar(255) DEFAULT NULL,
   `status` varchar(5) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `code_UNIQUE` (`code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -157,7 +158,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'dungvst','Nguyen Van Dung','Ninh Binh','1','dungvst@gmail.com','972550025','123456789','1');
+INSERT INTO `user` VALUES (1,'dungvst','Nguyen Van Dung','Ninh Binh','1','dungvst@gmail.com','972550025','ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413','6f50f394-0408-4515-9941-acf89262becd','1');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -245,4 +246,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-21  1:03:43
+-- Dump completed on 2016-06-06 20:20:48
